@@ -19,13 +19,12 @@ const LoginForm = () => {
 
    const handleSubmit = e => {
       e.preventDefault()
-
       axiosWithAuth()
          .post('/api/login', user)
          .then(res => {
             console.log(res)
             window.localStorage.setItem('token', res.data.payload)
-            history.push('/private')
+            history.push('/friends')
          })
          .catch(err => {
             console.log(err)
@@ -35,7 +34,7 @@ const LoginForm = () => {
    return (
       <form onSubmit={handleSubmit}>
          <input onChange={handleChanges} type='text' placeholder='username' name='username' value={user.username} />
-         <input onChange={handleChanges} type='text' placeholder='password' name='password' password={user.password} />
+         <input onChange={handleChanges} type='password' placeholder='password' name='password' password={user.password} />
          <input type='submit' />
       </form>
    );

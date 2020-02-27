@@ -15,3 +15,19 @@ code {
 .App {
    text-align: center;
 }
+
+.list {
+   width: 90%;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   text-align: center;
+   justify-content: center;
+}
+
+.friend {
+   width: 26%;
+   background-color: grey;
+   border-radius: 10px;
+   margin: 2%;
+}
